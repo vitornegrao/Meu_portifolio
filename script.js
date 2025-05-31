@@ -74,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // função do butão de Enviar e-mail
-
 document.getElementById('enviar-email').addEventListener('click', function (e) {
     e.preventDefault();
 
-    const emailDestino = 'vitor.negrão@email.com'; // <== Troque pelo seu email real
+    const emailDestino = 'vitornegraorocha@gmail.com';
     const assunto = encodeURIComponent('Contato via Portfólio');
     const corpo = encodeURIComponent('Olá Vitor, estou entrando em contato pelo seu portfólio!');
 
