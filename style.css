@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('imagens/imagem_fundo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+header {
+    background-color: rgba(22, 41, 54, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    max-width: 120000px;
+    margin: auto;
+    backdrop-filter: blur(5px);
+}
+
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #27e9b5;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Transformação do hambúrguer quando ativo */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile menu — esconder nav-links no mobile e mostrar ao clicar hamburger */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 240px;
+        background-color: rgba(22, 41, 54, 0.95);
+        flex-direction: column;
+        align-items: start;
+        padding: 5rem 2rem;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        border-radius: 0 0 0 15px;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        width: 100%;
+        display: block;
+        padding: 0.8rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* .nav */
+.nav {
+    border-radius: 15px;
+    background-color: rgba(22, 41, 54, 0.9);
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Navbar */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #27e9b5;
+    font-weight: 500;
+    font-family: 'Titillium Web', sans-serif;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3b5265;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #cdcdcd;
+    margin-bottom: 2rem;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #27e9b5;
+    color: #051824;
+    border: none;
+    border-radius: 25%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* só aparece com .show */
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+.top-btn.show {
+    display: block;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #27e9b5;
+    color: #051824;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #3b5265;
+    color: #ffffff;
+}
+
+/* Seções */
+section {
+    margin-bottom: 4rem;
+    background-color: rgba(5, 24, 36, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+    color: #cdcdcd;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Projetos */
+.projetos-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.projeto-card {
+    border: 1px solid #3b5265;
+    background-color: rgba(22, 41, 54, 0.95);
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.projeto-card:hover {
+    box-shadow: 0 4px 16px rgba(39, 233, 181, 0.2);
+}
+
+.projeto-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.projeto-link:hover {
+    transform: scale(1.02);
+}
+
+.projeto-card {
+    cursor: pointer;
+}
+
+
+/* Habilidades */
+.habilidades-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.habilidades-list li {
+    background: #3b5265;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(22, 41, 54, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    max-width: 120000px;
+    margin: auto;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
