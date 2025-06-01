@@ -112,6 +112,26 @@ header {
     margin: auto;
     padding: 1rem 2rem;
     backdrop-filter: blur(10px);
+
+    .top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    background-color: #27e9b5;
+    color: #051824;
+    border: none;
+    border-radius: 90%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* só aparece com .show */
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.top-btn.show {
+    display: block;
+}
 }
 
 /* Navbar */
